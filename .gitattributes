@@ -1,0 +1,1 @@
+*.pneumonia[[:space:]]detecion filter=lfs diff=lfs merge=lfs -text

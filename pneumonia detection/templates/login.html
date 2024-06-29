@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_login.css') }}"/>
+    <title>Login</title>
+</head>
+<body>
+    <div id="background">
+        <div id="image">
+            <div class="text">
+                <h2>Clear Lungs</h2>
+            </div>
+            <div id="sideImage">
+                <img src="{{ url_for('uploaded_file', filename='pneumo.jpg') }}" alt="Pneumonia Image">
+            </div>
+        </div>
+        <div id="loginContent">
+            <div id="text"><h2>Login</h2></div>
+            <div id="container">
+                <form action="/login" method="POST">
+                    <div class="email_text">
+                        Email:&nbsp;<input type="email" name="email" required />
+                    </div>
+                    <div class="password_text">
+                        Password:&nbsp;<input type="password" name="password" required />
+                    </div>
+                    <div class="submit">
+                        <button type="submit">Sign In</button>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" />&nbsp;Keep me logged in
+                    </div>
+                </form>
+            </div>
+            <div id="signUp">
+                <div class="text">Don't have an account?</div>
+                <a href="/signUp">
+                    <button>Signup</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

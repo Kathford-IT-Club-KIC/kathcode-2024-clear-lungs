@@ -1,0 +1,183 @@
+
+#background
+{
+  background-image: url("/uploads/bg.avif");
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  /* background-color: rgb(85, 79, 79); */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#background #image
+{
+  padding-top: 0px;
+  padding-bottom: 100px;
+}
+#background #image .text
+{
+  font-size: 70px;
+  color: aliceblue;
+  /* border: 2px solid white; */
+  text-align: center;
+}
+
+#loginContent {
+  /* filter: opacity(0.8); */
+  
+  border: 1px solid transparent;
+  min-height: 600px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  color: rgb(191, 172, 172);
+  font-size: 50px;
+  height:1000px;
+}
+
+#loginContent #text {
+  font-weight: bold;
+  background-color: rgba(90, 88, 88, 0.122);
+  border: 2px solid transparent;
+  border-radius: 100px;
+  padding-right: 30px;
+  padding-left: 30px;
+  align-items: baseline;
+  color: aliceblue;
+}
+#loginContent #signUp {
+  font-size: 30px;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  padding-top: 20px;
+}
+#loginContent #signUp button {
+  font-size: 20px;
+  margin-left: 10px;
+  border-radius: 13px;
+  background-color: rgb(71, 144, 189);
+  color:aliceblue;
+  border: 2px solid rgb(253, 253, 253);
+  height: 50px;
+  width: 100px;
+}
+
+#loginContent #signUp .text{
+  color: rgb(0, 0, 0);
+}
+
+#loginContent #signUp button:hover {
+  background-color:  rgb(185, 185, 52);
+  cursor: pointer;
+  color: blue;
+  border-color: rgb(111, 111, 232);
+}
+#loginContent #signUp button:hover a {
+  color: black;
+}
+#loginContent #signUp button a {
+  color: white;
+  text-decoration: none;
+}
+
+
+#loginContent #container {
+  /* border: 2px solid rgb(255, 255, 255); */
+  background-color: rgb(121, 134, 153);
+  width: 500px;
+  padding-right: 60px;
+  padding-left: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  border-radius: 5px;
+}
+#loginContent form {
+  padding: 15px;
+  /* border: 2px solid rgb(0, 0, 0); */
+  border-radius: 7px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  background-color: rgba(200, 214, 242, 0.146);
+  font-size: 30px;
+  color: rgb(153, 150, 150);
+  align-items: center;
+}
+#loginContent form div {
+  flex: 100% 1 1;
+  margin: 10px 0px;
+}
+
+#loginContent form .email_text
+{
+    padding-left: 35px;
+}
+
+#loginContent form .email_text,
+#loginContent form .password_text
+{
+    color: aliceblue;
+    font-size: 25px;
+}
+
+#loginContent form input[type=email],
+#loginContent form input[type=password] {
+  height: 40px;
+  width: 320px;
+  border-color: rgb(255, 255, 255);
+  outline: none;
+  border-radius: 5px;
+  font-size: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: rgba(20, 20, 21, 0.707);
+}
+#loginContent form input[type=email]:hover,
+#loginContent form input[type=password]:hover {
+  background-color: rgba(206, 218, 238, 0.981);
+}
+#loginContent form .submit button {
+  font-size: 20px;
+  background-color: rgb(17, 135, 27);
+  border-radius: 12px;
+  padding: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: aliceblue;
+}
+#loginContent form .submit {
+    padding-left: 140px;
+}
+#loginContent form .checkbox {
+    
+    display: inline;
+    padding-left:110px;
+    /* justify-content: center; */
+    color: aliceblue;
+    font-size: 20px;
+}
+
+#loginContent form .checkbox input[type=checkbox]:hover {
+    
+    background-color: rgba(61, 146, 214, 0.312);
+}
+#loginContent form .submit button:hover {
+  background-color: rgb(185, 185, 52);
+  cursor: pointer;
+  border-color: rgb(255, 255, 255);
+  color: rgb(6, 74, 6);
+}
+#loginContent form button {
+  width: max-content;
+  cursor: pointer;
+}

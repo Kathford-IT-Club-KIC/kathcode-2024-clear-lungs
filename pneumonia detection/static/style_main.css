@@ -1,0 +1,127 @@
+body {
+    background-image: url("/uploads/bg.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#headText {
+    text-align: center;
+    font-size: 45px;
+    color: antiquewhite;
+}
+
+#main-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#main-container #upload {
+    background-color: rgb(67, 61, 61);
+    height: 700px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 2px solid white;
+    border-radius: 15px;
+}
+
+#main-container #upload #uploadImage {
+    /* content: url("/uploads/uploadImage.webp");
+    /* border: 2px solid white; */
+
+}
+#upload label {
+    font-size: 30px;
+    color: aliceblue;
+}
+
+.uploadClass {
+    border: 2px solid white;
+    border-radius: 5px;
+    height: 550px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color:  rgba(232, 222, 222, 0.666) ;
+}
+
+#main-container #upload .buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* border: 2px solid white; */
+    align-items: center;
+    border: 2px ;
+}
+
+#main-container #upload .buttons button:hover {
+    background-color: rgba(222, 233, 12, 0.724);
+    cursor: pointer;
+    border: 3px solid white;
+    color: rgb(7, 138, 7);
+}
+
+#main-container #upload .buttons input[type="file"] {
+    /* background-color: rgb(194, 240, 156); */
+    height: 35px;
+    width: 150px;
+    /* padding: 10px; */
+    font-size: 25px;
+    padding-top: 10px;
+    display: inline-block;
+    /* border-radius: 10px; */
+}
+
+#main-container #upload .buttons button {
+    background-color: rgb(16, 98, 0);
+    height: 32px;
+    width: 100px;
+    border-radius: 5px;
+    color: antiquewhite;
+    font-size: 20px;
+    align-items: self-end;
+    padding-left: 0px;
+}
+
+#main-container #result {
+    background-color: rgb(67, 61, 61);;
+    height: 700px;
+    width: 600px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border:2px solid rgb(255, 255, 255);
+    
+}
+
+#main-container #result .resultClass
+{
+    border: 2px solid rgb(255, 255, 255);
+    height: 550px;
+    width: 500px;
+    background-color: rgba(232, 222, 222, 0.666);
+    border-radius: 5px;
+    background-image: url(/uploads/searchmain.png);
+    /* background-size: cover; */
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+#result h3{
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    align-self: flex-start;
+    padding-left: 80px;
+}
+
+#result .resultImage
+{
+}

@@ -1,0 +1,154 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style_main.css">
+    <title>Main Interface</title>
+</head>
+<body>
+    <div class="main-container">
+        <h2>Pneumonia Detection</h2>
+        <form action="/predict" method="POST" enctype="multipart/form-data">
+            <label for="file">Upload Chest X-Ray:</label>
+            <input type="file" id="file" name="file" required>
+            <button type="submit">Submit</button>
+        </form>
+        {% if result %}
+        <p class="result">{{ result }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>  -->
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/static/style_main.css" />
+        <title>Main Interface</title>
+    </head>
+    <body>
+        <div id="headText">
+            <h2>Pneumonia Detection</h2>
+        </div>
+        <div id="main-container">
+            <div id="upload">
+                <div class="uploadClass">
+                    <div id="uploadImage">
+                        
+                    </div>
+                    <label for="file">Upload Chest X-Ray:</label>
+                    <form action="/predict" method="POST" enctype="multipart/form-data">
+            <label for="file">Upload Chest X-Ray:</label>
+            <input type="file" id="file" name="file" required>
+            <button type="submit">Submit</button>
+             </form>
+                </div>
+            </div>
+            <div id="result">
+                <h3>Result:
+                    {% if result %}
+        <p class="result">{{ result }}</p>
+        {% endif %}
+                </h3>
+                <div class="resultClass"> 
+                    <div class="resultImage">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html> 
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link rel="stylesheet" href="/static/style_main.css" />
+     <title>Main Interface</title>
+     <style>
+         /* Add your CSS styles here as needed */
+     </style>
+ </head>
+ <body>
+     <div id="headText">
+         <h2>Pneumonia Detection</h2>
+     </div>
+     <div id="main-container">
+         <div id="upload">
+             <div class="uploadClass">
+                 <div id="uploadImage">
+                     <!-- This div will display the uploaded image -->
+                 </div>
+                 <label for="file">Upload Chest X-Ray:</label>
+                 <form id="uploadForm" action="/predict" method="POST" enctype="multipart/form-data">
+                     <input type="file" id="file" name="file" required>
+                     <button type="submit">Submit</button>
+                     
+                 </form>
+             </div>
+         </div>
+         <div id="result">
+            <h3 style="display: inline;">Result: <p class="result" id="predictionResult" style="display: inline; font-size: inherit; font-weight: normal; margin: 0;"></p></h3>
+             <div class="resultClass"> 
+                 <div class="resultImage">
+                     
+                 </div>
+             </div>
+         </div>
+     </div>
+ 
+     <script>
+         // Function to preview the selected image
+         function previewImage(event) {
+             var file = event.target.files[0];
+             var reader = new FileReader();
+             
+             reader.onload = function() {
+                 var imgElement = document.createElement('img');
+                 imgElement.src = reader.result;
+                 imgElement.style.maxWidth = '100%'; // Ensure the image fits within the container
+                 imgElement.style.maxHeight = '100%'; // Ensure the image fits within the container
+                 imgElement.style.borderRadius = '5px'; // Optional: Add border radius
+                 
+                 var uploadImageDiv = document.getElementById('uploadImage');
+                 uploadImageDiv.innerHTML = ''; // Clear previous content
+                 uploadImageDiv.appendChild(imgElement);
+             }
+             
+             reader.readAsDataURL(file);
+         }
+ 
+         // Attach the previewImage function to the file input change event
+         document.getElementById('file').addEventListener('change', previewImage);
+         
+         // Handle form submission using fetch API
+         document.getElementById('uploadForm').addEventListener('submit', function(event) {
+             event.preventDefault(); // Prevent default form submission
+             
+             var formData = new FormData(this);
+             
+             fetch('/predict', {
+                 method: 'POST',
+                 body: formData
+             })
+             .then(response => response.json())
+             .then(data => {
+                 // Display the prediction result
+                 var predictionResult = document.getElementById('predictionResult');
+                 predictionResult.textContent = data.result;
+             })
+             .catch(error => console.error('Error:', error));
+         });
+     </script>
+ </body>
+ </html>
+ 
+
+
